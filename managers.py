@@ -101,7 +101,9 @@ class CEO(object):
     def sandwich(cls, word):
         """
         """
-        results = [corpus.sandwich(word) for corpus in cls.corpora]
+        ind = cls.corpora_health.index(max(cls.corpora_health))
+        results = cls.corpora[ind].sandwich(word)
+#        results = [corpus.sandwich(word) for corpus in cls.corpora]
         return tokenwrap(results)
     
     @classmethod
